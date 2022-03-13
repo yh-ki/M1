@@ -29,6 +29,6 @@
   (memq x '(read-byte peek-byte)))
 (define (op1? x)
   (memq x '(add1 sub1 zero? char? integer->char char->integer
-                 write-byte eof-object?)))
+                 write-byte eof-object? arithmetic-shift)))
 (define (op2? x)
   (memq x '(+ - arithmetic-shift)))
