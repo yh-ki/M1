@@ -14,7 +14,7 @@
 (define (test-runner run)
 
   ;; arithmetic-shift examples
-  (check-equal? (run '(arithmetic-shift 10 3)) 1024 'arithmetic-shift-ex1)
+  (check-equal? (run '(arithmetic-shift 1 10)) 1024 'arithmetic-shift-ex1)
   (check-equal? (run '(arithmetic-shift 255 -3)) 31 'arithmetic-shift-ex2)
   (check-equal? (run '(arithmetic-shift 1 #f)) 'err 'arithmetic-shift-ex3)
   
