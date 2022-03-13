@@ -79,7 +79,8 @@
           (Mov rax r8))]
     [arithmetic-shift
      (let ((l1 (gensym))
-           (l2 (gensym)))
+           (l2 (gensym))
+           (l3 (gensym)))
        (seq (Pop r8)
             (assert-integer r8 c)
             (assert-integer rax c)
@@ -88,12 +89,21 @@
             (Jg l1)
             (Mov 'rbx 0)
             (Sub 'rbx rax)
-            (Sar r8 'rbx)
+            (Mov rax 'rbx)
             (Jmp l2)
             (Label l1)
-            (Sal r8 rax)
+            (Cmp rax 0)
+            (Je l3)
+            (Sal r8 1)
+            (Sub rax 1)
+            (Jmp l1)
             (Label l2)
-            (Mov rax r8)))]))
+            (Cmp rax 0)
+            (Je l3)
+            (Sar r8 1)
+            (Sub rax 1)
+            (Jmp l2)
+            (Label l3)))]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
