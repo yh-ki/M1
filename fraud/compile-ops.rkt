@@ -77,23 +77,23 @@
           (assert-integer rax c)
           (Sub r8 rax)
           (Mov rax r8))]
-    ['arithmetic-shift
+    ['arithmetic
      (let ((l1 (gensym))
            (l2 (gensym)))
-     (seq (Pop r8)
-          (assert-integer r8 c)
-          (assert-integer rax c)
-          (Cmp rax 0)
-          (Jg l1)
-          (Mov 'rbx 0)
-          (Sub 'rbx rax)
-          (Sar r8 'rbx)
-          (Jmp l2)
-          (Label l1)
-          (Sal r8 rax)
-          (Label l2)
-          (Mov rax r8)
-          ))]))
+       (seq (Pop r8)
+            (assert-integer r8 c)
+            (assert-integer rax c)
+            (Sar rax 1)
+            (Cmp rax 0)
+            (Jg l1)
+            (Mov rbx 0)
+            (Sub rbx rax)
+            (Sar r8 rbx)
+            (Jmp l2)
+            (Label l1)
+            (Sal r8 rax)
+            (Label l2)
+            (Mov rax r8)))]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
