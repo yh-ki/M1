@@ -89,7 +89,7 @@
             (Jl l2)
             
             (Label l1)
-            (Cmp rax (value-bits 0))
+            (Cmp rax (value->bits 0))
             (Je l3)
             (Sal r8 1)
             (Sub rax (value->bits 1))
