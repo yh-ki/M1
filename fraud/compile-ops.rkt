@@ -77,7 +77,7 @@
           (assert-integer rax c)
           (Sub r8 rax)
           (Mov rax r8))]
-    ['arithmetic
+    [arithmetic-shift
      (let ((l1 (gensym))
            (l2 (gensym)))
        (seq (Pop r8)
