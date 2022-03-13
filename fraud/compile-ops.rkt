@@ -84,6 +84,7 @@
        (seq (Pop r8)
             (assert-integer r8 c)
             (assert-integer rax c)
+            
             (Sar rax 1)
             (Cmp rax 0)
             (Jg l1)
@@ -91,18 +92,21 @@
             (Mov rax 0)
             (Sub rax 'r9)
             (Jmp l2)
+            
             (Label l1)
-            (Cmp rax 0)
-            (Je l3)
-            (Sal r8 1)
-            (Sub rax 1)
-            (Jmp l1)
+            ;(Cmp rax 0)
+            ;(Je l3)
+            ;(Sal r8 1)
+            ;(Sub rax 1)
+            ;(Jmp l1)
+            
             (Label l2)
             (Cmp rax 0)
             (Je l3)
             (Sar r8 1)
             (Sub rax 1)
             (Jmp l2)
+            
             (Label l3)
             (Mov rax r8)))]))
 
