@@ -84,7 +84,6 @@
        (seq (Pop r8)
             (assert-integer r8 c)
             (assert-integer rax c)
-            (Sar rax 1)
             (Cmp rax 0)
             (Jg l1)
             (Mov 'rbx 0)
