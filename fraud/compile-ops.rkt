@@ -108,7 +108,7 @@
             (Sub rax 1)
             (Xor r8 rax)
             (Cmp r8 1)
-            (Je l4)
+            (Jne l4)
             (Add rax 1)
             (Label l4)))]))
 
